@@ -20,7 +20,7 @@ if (isset($_POST["login"])) {
             $_SESSION["login"] = true;
             $_SESSION["username"] = $row["USERNAME_ADMIN"];
 
-            header("location: berhasil.php");
+            header("location: rekap.php");
             exit;
         }
     }
@@ -30,7 +30,6 @@ if (isset($_POST["login"])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +61,7 @@ if (isset($_POST["login"])) {
     }
 
     .logo img{
-        height: 60px;       
+        height: 80px;       
     }
 
     .form-box{

@@ -1,10 +1,11 @@
 <style>
+
     .footer{
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        background: #D9D9D9;
+        background-color: #d9d9d9;
         padding: 18px;
         padding-left: 80px;
         font-size: 14px;
