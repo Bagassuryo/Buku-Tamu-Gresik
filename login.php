@@ -40,6 +40,7 @@ if (isset($_POST["login"])) {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body{
@@ -47,7 +48,7 @@ if (isset($_POST["login"])) {
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background: linear-gradient(to bottom, #1B75BC, #2E3192);
+        background:linear-gradient(to right, #1B75BC, #2E3192);
     }
 
     .main{
@@ -66,14 +67,14 @@ if (isset($_POST["login"])) {
 
     .form-box{
         width: 500px;
-        background: #D9D9D9;
         border-radius: 4px;
-        box-shadow: 8px 4px 6px black;
+        box-shadow: 3px 3px 5px black;
         padding: 35px;
+        background-color: #d9d9d9;
     }
 
     h2{
-        font-size: 35px;
+        font-size: 30px;
         text-align: center;
         margin-bottom: 30px;
     }
@@ -85,12 +86,12 @@ if (isset($_POST["login"])) {
     input{
         width: 100%;
         padding: 12px;
-        background: #D9D9D9;
         border-radius: 6px;
         outline: none;
         font-size: 13px;
         color: black;
         margin-bottom: 20px;
+        background: #d9d9d9;
     }
 
     input[type = checkbox]{
@@ -126,14 +127,25 @@ if (isset($_POST["login"])) {
         color: #cc0000;
     }
 
+    .footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background:#d9d9d9;
+        padding: 18px;
+        padding-left: 80px;
+        font-size: 14px;
+    }
+
 </style>
 
 </head>
 <body>
 
     <div class="logo">
-        <img src="assets/img/gresik.png">
-        <img src="assets/img/kominfo.png">
+        <img src="image/gresik.png">
+        <img src="image/kominfo.png">
     </div>
 
     <div class="main">
@@ -159,7 +171,9 @@ if (isset($_POST["login"])) {
 
     </div>
 
-    <?php include "include/footer.php"; ?>    
+    <footer class="footer">
+        <p>© 2026 Copyright <a href="https://diskominfo.gresikkab.go.id/"> Dinas Komunikasi dan Informatika </a></p>
+    </footer> 
 
     <script>
         function lihatpassword(){
