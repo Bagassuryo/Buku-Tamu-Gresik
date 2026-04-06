@@ -6,22 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buku Tamu - Dinas Kominfo Gresik</title>
-    <link rel="stylesheet" href="asset/css/style.css">
-    <link rel="stylesheet" href="asset/css/form.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+
 <body>
     <header class="site-header">
         <div class="header-inner">
             <div class="branding">
-                <img src="asset//img/gresik.png" alt="Logo Gresik" class="logo">
-                <img src="asset//img/kominfo.png" alt="Logo Kominfo" class="logo">
+                <img src="assets/img/gresik.png" alt="Logo Gresik" class="logo">
+                <img src="assets/img/kominfo.png" alt="Logo Kominfo" class="logo">
             </div>
 
             <nav class="main-nav">
-                <a href="index.php" class="nav-button">Buku Tamu</a>
-                <a href="pulang.php" class="nav-button">Pulang</a>
-                <a href="skm.php" class="nav-button">SKM</a>
-                <a href="login.php" class="nav-button">Login</a>
+                <a href="index.php" class="nav-button">Buku Tamu <i class="material-icons">book</i></a>
+                <a href="pulang.php" class="nav-button">Pulang <i class="material-icons">logout</i></a>
+                <a href="skm.php" class="nav-button">SKM <i class="material-icons">chat</i></a>
+                <a href="login.php" class="nav-button">Login <i class="material-icons">login</i></a>
             </nav>
         </div>
     </header>
@@ -56,8 +58,11 @@
                         <option value="" disabled selected>-- Pilih Layanan --</option>
                         <option value="bidang_sip">Bidang SIP</option>
                         <option value="bidang_spbe">Bidang SPBE</option>
+                        <option value="bidang_ti">Bidang TI</option>
                         <option value="kepala_dinas">Kepala Dinas Kominfo</option>
+                        <option value="radio">Radio</option>
                         <option value="sekretariat">Sekretariat</option>
+                        <option value="sekretarias_diskominfo">Sekretarias Dinas Kominfo</option>
                     </select>
                 </div>
 
@@ -68,7 +73,7 @@
 
                 <div class="form-group">
                     <label for="hp">NO. HP (WAJIB DIISI)</label>
-                    <input type="tel" id="hp" name="hp" placeholder="08xxxxxxx" required>
+                    <input type="number" id="hp" name="hp" placeholder="08123456789" required>
                 </div>
 
                 <div class="form-group">

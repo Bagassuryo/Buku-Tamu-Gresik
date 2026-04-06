@@ -1,0 +1,146 @@
+/* FORM STYLING */
+.form-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1100px; /* Form dibuat lebar */
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrapper h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* --- FORM STYLING --- */
+.form-layanan {
+  margin-bottom: 40px;
+}
+
+.form-layanan label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.form-layanan select {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #444;
+  border-radius: 6px;
+  background: #fff;
+  outline: none;
+}
+
+.form-group {
+  margin-bottom: 35px;
+  border-bottom: 2px solid #555; /* Garis bawah tegas */
+  transition: border-color 0.3s;
+}
+
+.form-group:focus-within {
+  border-bottom: 2px solid #1b4cbb;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 12px 0;
+  outline: none;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+/* --- BUTTON --- */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background: #1b4cbb;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #163e95;
+}
+
+.alert {
+  padding: 14px 16px;
+  margin-bottom: 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .logo {
+    height: 40px;
+  }
+  .form-wrapper h1 {
+    font-size: 1.6rem;
+  }
+}

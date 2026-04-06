@@ -132,8 +132,8 @@ if (isset($_POST["login"])) {
 <body>
 
     <div class="logo">
-        <img src="image/gresik.png">
-        <img src="image/kominfo.png">
+        <img src="assets/img/gresik.png">
+        <img src="assets/img/kominfo.png">
     </div>
 
     <div class="main">
@@ -159,7 +159,7 @@ if (isset($_POST["login"])) {
 
     </div>
 
-    <?php include "footer.php"; ?>    
+    <?php include "include/footer.php"; ?>    
 
     <script>
         function lihatpassword(){
