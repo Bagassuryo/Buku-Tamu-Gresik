@@ -150,7 +150,7 @@ if (isset($_POST["login"])) {
 
     <div class="main">
             <h2>Login Administrator</h2>
-        <div class="form-box">
+        <div class="form-box"> 
 
     <form action="login.php" method="POST">
             <label>Username</label>
