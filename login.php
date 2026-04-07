@@ -183,8 +183,8 @@ if (isset($_POST["login"])) {
 <body>
 
     <div class="logo">
-        <img src="image/gresik.png">
-        <img src="image/kominfo.png">
+        <img src="assets/img/gresik.png">
+        <img src="assets/img/kominfo.png">
     </div>
 
     <div class="nav">
