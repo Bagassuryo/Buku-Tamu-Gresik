@@ -1,7 +1,7 @@
 <style>
     .footer {
         background: linear-gradient(135deg, #193f9f 0%, #1b59c8 100%);
-        position: relative;
+        position: <?php echo (basename($_SERVER['PHP_SELF']) == 'pulang.php') ? 'fixed' : 'relative'; ?>;
         color: #fff;
         bottom: 0;
         left: 0;
@@ -10,10 +10,10 @@
         padding-left: 80px;
         font-size: 14px;
     }
-    
+
     .footer p {
         margin: 0;
-        font-size: 1rem;
+        font-size: 0.875rem;
         font-weight: 500;
     }
 

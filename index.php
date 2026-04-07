@@ -27,15 +27,6 @@
                 </div>
             <?php endif; ?>
 
-            <?php if (isset($_SESSION['success'])): ?>
-                <div class="alert alert-success">
-                    <?php 
-                    echo htmlspecialchars($_SESSION['success']); 
-                    unset($_SESSION['success']);
-                    ?>
-                </div>
-            <?php endif; ?>
-
             <form class="guest-form" action="proses.php" method="post" autocomplete="off">
                 <div class="form-layanan">
                     <label for="layanan">LAYANAN</label>

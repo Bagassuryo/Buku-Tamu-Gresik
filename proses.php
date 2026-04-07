@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $conn->prepare("INSERT INTO user (LAYANAN, NAMA_TAMU, NO_HP, ASAL_INSTANSI, KETERANGAN, FOTO) VALUES (?, ?, ?, ?, ?, '')");
         $stmt->execute([$layanan_db, $nama, $hp, $asal, $keterangan]);
 
-        $_SESSION['success'] = 'Data berhasil disimpan!';
         header('Location: index.php');
         exit;
     } catch (PDOException $e) {
