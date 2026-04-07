@@ -12,22 +12,7 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <div class="branding">
-                <img src="assets/img/gresik.png" alt="Logo Gresik" class="logo">
-                <img src="assets/img/kominfo.png" alt="Logo Kominfo" class="logo">
-            </div>
-
-            <nav class="main-nav">
-                <a href="index.php" class="nav-button">Buku Tamu <i class="material-icons">book</i></a>
-                <a href="pulang.php" class="nav-button">Pulang <i class="material-icons">logout</i></a>
-                <a href="skm.php" class="nav-button">SKM <i class="material-icons">chat</i></a>
-                <a href="login.php" class="nav-button">Login <i class="material-icons">login</i></a>
-            </nav>
-        </div>
-    </header>
-
+    <?php include 'include/header.php'; ?>
     <main class="content">
         <div class="form-wrapper">
             <h1>Buku Tamu</h1>

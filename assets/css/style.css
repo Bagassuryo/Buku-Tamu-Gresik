@@ -13,56 +13,6 @@ body {
   background-color: #fcfcfc;
 }
 
-/*  HEADER */
-.site-header {
-  background: #1b4cbb;
-  color: #fff;
-  padding: 10px 2.5%; /* Memberi jarak 2.5% dari tepi layar */
-  width: 100%;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between; /* Logo kiri, Nav kanan */
-  align-items: center;
-  width: 100%;
-}
-
-.branding {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo {
-  height: 70px;
-  object-fit: contain;
-}
-
-.main-nav {
-  display: flex;
-  gap: 15px;
-}
-
-.material-icons {
-  font-size: 10px;
-  vertical-align: middle;
-}
-.nav-button {
-  padding: 8px 16px;
-  background: #fff;
-  color: #1b4cbb;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: 0.3s;
-}
-
-.nav-button:hover {
-  background: #e8eefa;
-}
-
 /* --- CONTENT & BACKGROUND --- */
 .content {
   padding: 60px 0;

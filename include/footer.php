@@ -1,21 +1,16 @@
 <style>
     .footer {
         background: linear-gradient(135deg, #193f9f 0%, #1b59c8 100%);
+        position: relative;
         color: #fff;
-        padding: 30px 0;
-        margin-top: 30px;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        border-top: 4px solid #ffeb9f;
+        padding: 18px;
+        padding-left: 80px;
+        font-size: 14px;
     }
-
-    .footer-container {
-        width: 95%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
+    
     .footer p {
         margin: 0;
         font-size: 1rem;
@@ -23,7 +18,7 @@
     }
 
     .footer a {
-        color: #ffeb9f;
+        color: #fff;
         text-decoration: none;
         font-weight: 700;
     }
