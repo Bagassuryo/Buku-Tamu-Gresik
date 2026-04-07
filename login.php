@@ -34,6 +34,7 @@ if (isset($_POST["login"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <style>
     *{
@@ -65,8 +66,45 @@ if (isset($_POST["login"])) {
         height: 80px;       
     }
 
+    .nav {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+
+    .nav ul {
+        list-style: none;
+    }
+
+    .nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        background: #ffffff;
+        padding: 8px 15px;
+        border-radius: 5px;
+        color: black;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .nav ul li a:hover {
+        background-color: #1B75BC;
+        color: white;
+        border: none;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 5px black;
+    }
+
+    .material-icons{
+        font-size: 20px;
+        vertical-align: middle;
+    }
+
     .form-box{
-        width: 500px;
+        height: 350px;
+        width: 600px;
         border-radius: 4px;
         box-shadow: 3px 3px 5px black;
         padding: 35px;
@@ -90,7 +128,8 @@ if (isset($_POST["login"])) {
         outline: none;
         font-size: 13px;
         color: black;
-        margin-bottom: 20px;
+        margin-top: 8px;
+        margin-bottom: 30px;
         background: #d9d9d9;
     }
 
@@ -148,15 +187,21 @@ if (isset($_POST["login"])) {
         <img src="image/kominfo.png">
     </div>
 
+    <div class="nav">
+        <ul>
+            <li><a href="index.php">Buku tamu<i class="material-icons">book</i></a></li>
+        </ul>
+    </div>
+
     <div class="main">
             <h2>Login Administrator</h2>
         <div class="form-box"> 
 
     <form action="login.php" method="POST">
             <label>Username</label>
-            <input type="text" name="USERNAME_ADMIN" placeholder="masukkan username" required>
+            <input type="text" name="USERNAME_ADMIN" placeholder="Masukkan username" required>
             <label> Password</label>
-            <input type="password" id="password" name="PASSWORD" placeholder="masukkan password" required>
+            <input type="password" id="password" name="PASSWORD" placeholder="Masukkan password" required>
             <div> 
                 <input type="checkbox" onclick="lihatpassword()"> 
                 <label> Tampilkan Password </label>
