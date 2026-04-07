@@ -92,18 +92,22 @@ body {
 /* watermark */
 .container::before {
     content: "";
-    background: url('image 2.png') no-repeat center;
-    background-size: 400px;
-    opacity: 100;
+    background: url('assets/img/rusa.png') no-repeat center;
+    background-size: contain;
+    opacity: 0.55;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .content {
     position: relative;
+    z-index: 1;
 }
 
 /* TITLE */
@@ -116,48 +120,27 @@ h1 {
 .form-group {
     width: 60%;
     margin: auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: block;
+    text-align: right;
 }
 
 .form-group input {
-    flex: 1;
+    width: 100%;
     border: none;
     border-bottom: 2px solid #999;
     padding: 10px;
     outline: none;
     background: transparent;
+    margin-bottom: 40px;
 }
 
-.btn {
+.form-group .btn {
+    display: inline-block;
     background: #2c5aa0;
     color: white;
-    border: none;
+    border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-}
-
-/* TABLE */
-.table-container {
-    margin-top: 50px;
-}
-
-table {
-    width: 80%;
-    margin: auto;
-    border-collapse: collapse;
-    background: white;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-th {
-    background: #2c7be5;
-    color: white;
 }
 
 </style>

@@ -16,7 +16,6 @@
     <main class="content">
         <div class="form-wrapper">
             <h1>Buku Tamu</h1>
-            <p class="subtitle">DINAS KOMUNIKASI DAN INFORMATIKA KAB GRESIK</p>
 
             <?php if (isset($_SESSION['error'])): ?>
                 <div class="alert alert-error">
@@ -43,22 +42,22 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nama">NAMA (WAJIB DIISI)</label>
-                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+                    <label for="nama">Nama (Wajib Diisi)</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="hp">NO. HP (WAJIB DIISI)</label>
-                    <input type="number" id="hp" name="hp" placeholder="08123456789" required>
+                    <label for="hp">No. Hp (Wajib Diisi)</label>
+                    <input type="number" id="hp" name="hp" placeholder="08xxxxxxxx" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="asal">ASAL INSTANSI (WAJIB DIISI)</label>
+                    <label for="asal">Asal Instansi (Wajib Diisi)</label>
                     <input type="text" id="asal" name="asal" placeholder="Nama instansi atau perusahaan" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="keterangan">KETERANGAN</label>
+                    <label for="keterangan">Keterangan</label>
                     <input type="text" id="keterangan" name="keterangan" placeholder="Keperluan Anda" required>
                 </div>
 
