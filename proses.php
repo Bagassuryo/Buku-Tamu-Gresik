@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hp = trim($_POST['hp']);
     $asal = trim($_POST['asal']);
     $keterangan = trim($_POST['keterangan']);
+    $foto = $_POST['foto'];
 
     // Validasi sederhana
     if (empty($nama) || empty($hp) || empty($asal) || empty($keterangan) || empty($layanan)) {
@@ -42,10 +43,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
+    // Foto otomatis
+    $namaFile = "";
+
+    if (!empty($foto)) {
+
+        // hapus header base64
+        $foto = str_replace('data:image/png;base64,', '', $foto);
+        $foto = str_replace(' ', '+', $foto);
+
+        // decode
+        $data = base64_decode($foto);
+
+        // nama file unik
+        $namaFile = "foto_" . time() . ".png";
+
+        // simpan ke folder
+        file_put_contents("foto/" . $namaFile, $data);
+    }
+
     try {
         // Insert ke database
-        $stmt = $conn->prepare("INSERT INTO user (LAYANAN, NAMA_TAMU, NO_HP, ASAL_INSTANSI, KETERANGAN, FOTO) VALUES (?, ?, ?, ?, ?, '')");
-        $stmt->execute([$layanan_db, $nama, $hp, $asal, $keterangan]);
+        $stmt = $conn->prepare("INSERT INTO user (LAYANAN, NAMA_TAMU, NO_HP, ASAL_INSTANSI, KETERANGAN, FOTO) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$layanan_db, $nama, $hp, $asal, $keterangan, $namaFile]);
 
         header('Location: index.php');
         exit;

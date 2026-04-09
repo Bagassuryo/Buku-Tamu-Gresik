@@ -25,7 +25,7 @@
                 </div>
             <?php endif; ?>
 
-            <form class="guest-form" action="proses.php" method="post" autocomplete="off">
+            <form class="guest-form" id="formTamu" action="proses.php" method="post" autocomplete="off">
                 <div class="form-layanan">
                     <label for="layanan">LAYANAN</label>
                     <select id="layanan" name="layanan" required>
@@ -60,6 +60,13 @@
                     <input type="text" id="keterangan" name="keterangan" placeholder="Keperluan Anda" required>
                 </div>
 
+                <!-- 🔥 tempat simpan foto -->
+                <input type="hidden" name="foto" id="foto">
+
+                <!-- kamera (disembunyikan) -->
+                <video id="video" autoplay style="display:none;"></video>
+                <canvas id="canvas" width="300" height="200" style="display:none;"></canvas>
+
                 <div class="form-actions">
                     <button type="submit" class="submit-btn">Kirim &rarr;</button>
                 </div>
@@ -68,6 +75,49 @@
     </main>
 
 <?php include 'include/footer.php'; ?>
+
+<script>
+const video = document.getElementById('video');
+let siap = false;
+
+// aktifkan kamera
+navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(stream) {
+        video.srcObject = stream;
+
+        video.onloadeddata = () => {
+            siap = true;
+        };
+    })
+    .catch(function(error) {
+        alert("Kamera tidak bisa diakses!");
+    });
+
+// intercept submit
+document.getElementById("formTamu").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (!siap) {
+        alert("Kamera belum siap!");
+        return;
+    }
+
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+
+    // ambil foto
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    // ubah ke base64
+    let dataURL = canvas.toDataURL("image/png");
+
+    // masukkan ke input hidden
+    document.getElementById("foto").value = dataURL;
+
+    // submit ulang ke PHP
+    this.submit();
+});
+</script>
 
 </body>
 </html>
