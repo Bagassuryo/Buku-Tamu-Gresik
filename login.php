@@ -107,8 +107,9 @@ if (isset($_POST["login"])) {
         width: 600px;
         border-radius: 4px;
         box-shadow: 3px 3px 5px black;
-        padding: 35px;
+        padding: 33px;
         background-color: #d9d9d9;
+        margin-bottom: 50px;
     }
 
     h2{
@@ -129,7 +130,7 @@ if (isset($_POST["login"])) {
         font-size: 13px;
         color: black;
         margin-top: 8px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         background: #d9d9d9;
     }
 
@@ -202,7 +203,7 @@ if (isset($_POST["login"])) {
             <input type="text" name="USERNAME_ADMIN" placeholder="Masukkan username" required>
             <label> Password</label>
             <input type="password" id="password" name="PASSWORD" placeholder="Masukkan password" required>
-            <div> 
+            <div style="margin-top: -10px; margin-bottom:20px; margin-left:5px"> 
                 <input type="checkbox" onclick="lihatpassword()"> 
                 <label> Tampilkan Password </label>
             </div>
