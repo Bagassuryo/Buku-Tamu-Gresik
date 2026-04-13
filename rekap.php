@@ -1,6 +1,11 @@
 <?php
 session_start();
 require 'config/config.php';
+require 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 
 if(!isset($_SESSION["login"])){
     header("location: login.php");
@@ -32,24 +37,58 @@ if (isset($_GET['search'])) {
 
 /* EXPORT EXCEL */
 if (isset($_GET['export'])) {
-    header("Content-Type: application/vnd-ms-excel");
-    header("Content-Disposition: attachment; filename=rekap_data.xls");
 
-    echo "Layanan\tNama\tNo HP\tInstansi\tKeterangan\tTanggal\tDatang\tPulang\tFoto\n";
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+
+    // Header
+    $sheet->setCellValue('A1', 'Layanan');
+    $sheet->setCellValue('B1', 'Nama');
+    $sheet->setCellValue('C1', 'No HP');
+    $sheet->setCellValue('D1', 'Instansi');
+    $sheet->setCellValue('E1', 'Keterangan');
+    $sheet->setCellValue('F1', 'Tanggal');
+    $sheet->setCellValue('G1', 'Datang');
+    $sheet->setCellValue('H1', 'Pulang');
+    $sheet->setCellValue('I1', 'Foto');
+
+    $row = 2;
 
     $export = $conn->query("SELECT * FROM user");
+
     while ($data = $export->fetch(PDO::FETCH_ASSOC)) {
 
-        echo $data['LAYANAN']."\t".
-             $data['NAMA_TAMU']."\t".
-             $data['NO_HP']."\t".
-             $data['ASAL_INSTANSI']."\t".
-             $data['KETERANGAN']."\t".
-             $data['TANGGAL']."\t".
-             $data['DATANG']."\t".
-             $data['PULANG']."\t".
-             $data['FOTO']."\n";
+        $sheet->setCellValue('A'.$row, $data['LAYANAN']);
+        $sheet->setCellValue('B'.$row, $data['NAMA_TAMU']);
+        $sheet->setCellValue('C'.$row, $data['NO_HP']);
+        $sheet->setCellValue('D'.$row, $data['ASAL_INSTANSI']);
+        $sheet->setCellValue('E'.$row, $data['KETERANGAN']);
+        $sheet->setCellValue('F'.$row, $data['TANGGAL']);
+        $sheet->setCellValue('G'.$row, $data['DATANG']);
+        $sheet->setCellValue('H'.$row, $data['PULANG']);
+
+        // 🔥 FOTO
+        if (!empty($data['FOTO']) && file_exists('foto/' . $data['FOTO'])) {
+
+            $drawing = new Drawing();
+            $drawing->setPath('foto/' . $data['FOTO']);
+            $drawing->setHeight(80);
+            $drawing->setCoordinates('I' . $row);
+            $drawing->setWorksheet($sheet);
+        }
+
+        // tinggi row
+        $sheet->getRowDimension($row)->setRowHeight(60);
+
+        $row++;
     }
+
+    // output
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename="rekap_data.xlsx"');
+
+    $writer = new Xlsx($spreadsheet);
+    $writer->save('php://output');
     exit;
 }
 ?>
