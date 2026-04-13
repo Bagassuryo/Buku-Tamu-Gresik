@@ -10,28 +10,34 @@ date_default_timezone_set('Asia/Jakarta');
 ========================= */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    if (empty($_POST['ID'])) {
+        echo "<script>alert('Pilih tamu dulu!');</script>";
+        exit;
+    }
+
     $ID = $_POST['ID'];
 
     $query = $conn->prepare("
         UPDATE user 
         SET PULANG = NOW() 
-        WHERE ID = :ID AND PULANG IS NULL
+        WHERE ID_USER = :ID_USER AND PULANG IS NULL
     ");
 
-    $query->execute(['ID' => $ID]);
+    $query->execute(['ID_USER' => $ID]);
 
     // refresh halaman biar data hilang dari list
-    header("Location: kepulangan.php");
+    header("Location: pulang.php");
     exit;
 }
 
 /* =========================
-   AMBIL DATA
+   AMBIL DATA UNTUK DROPDOWN
 ========================= */
-$query = $conn->query("
-    SELECT * FROM user 
+$dataTamu = $conn->query("
+    SELECT ID_USER, NAMA_TAMU 
+    FROM user 
     WHERE PULANG IS NULL 
-    ORDER BY tanggal DESC
+    ORDER BY NAMA_TAMU ASC
 ");
 ?>
 
@@ -89,12 +95,12 @@ body {
     position: relative;
 }
 
-/* watermark */
+/* WATERMARK */
 .container::before {
     content: "";
     background: url('assets/img/rusa.png') no-repeat center;
     background-size: contain;
-    opacity: 0.55;
+    opacity: 0.2;
     position: absolute;
     top: 100%;
     left: 50%;
@@ -124,7 +130,8 @@ h1 {
     text-align: right;
 }
 
-.form-group input {
+/* SELECT */
+.form-group select {
     width: 100%;
     border: none;
     border-bottom: 2px solid #999;
@@ -132,8 +139,10 @@ h1 {
     outline: none;
     background: transparent;
     margin-bottom: 40px;
+    font-size: 14px;
 }
 
+/* BUTTON */
 .form-group .btn {
     display: inline-block;
     background: #2c5aa0;
@@ -141,27 +150,43 @@ h1 {
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+    border: none;
 }
 
+.form-group .btn:hover {
+    background: #1d3f73;
+}
 </style>
 
 </head>
 <body>
 
 <?php include 'include/header.php'; ?>
+
 <!-- CONTENT -->
 <div class="container">
     <div class="content">
         <h1>KEPULANGAN TAMU</h1>
 
-        <!-- FORM INPUT -->
+        <!-- FORM DROPDOWN -->
         <form method="POST" class="form-group">
-            <input type="text" name="ID" placeholder="Nama / ID Tamu" required>
+            <select name="ID" required>
+                <option value="" disabled selected>-- Pilih Tamu --</option>
+
+                <?php while ($tamu = $dataTamu->fetch(PDO::FETCH_ASSOC)) : ?>
+                    <option value="<?= $tamu['ID_USER']; ?>">
+                        <?= $tamu['NAMA_TAMU']; ?>
+                    </option>
+                <?php endwhile; ?>
+
+            </select>
+
             <button type="submit" class="btn">Kirim ➤</button>
         </form>
     </div>
 </div>
 
 <?php include 'include/footer.php'; ?>
+
 </body>
 </html>
