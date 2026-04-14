@@ -46,7 +46,7 @@ body {
   z-index: 2;
   width: 90%;
   max-width: 1100px; /* Form dibuat lebar */
-  background: transparent
+  background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 40px;

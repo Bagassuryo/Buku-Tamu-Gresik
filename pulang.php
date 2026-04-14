@@ -100,7 +100,7 @@ body {
     content: "";
     background: url('assets/img/rusa.png') no-repeat center;
     background-size: contain;
-    opacity: 0.2;
+    opacity: 0.55;
     position: absolute;
     top: 100%;
     left: 50%;
