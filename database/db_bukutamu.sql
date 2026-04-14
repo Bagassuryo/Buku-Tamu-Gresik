@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Apr 2026 pada 04.11
+-- Waktu pembuatan: 14 Apr 2026 pada 02.44
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -75,7 +75,17 @@ INSERT INTO `user` (`ID_USER`, `LAYANAN`, `NAMA_TAMU`, `NO_HP`, `ASAL_INSTANSI`,
 (10, 'BIDANG TI', 'smash', 111111111, 'gresik', 'bermain', '2026-04-01', '15:20:14', '12:35:39', 'coba.png'),
 (11, 'BIDANG TI', 'smash', 111111111, 'gresik', 'bermain', '2026-04-01', '15:20:14', '12:35:39', 'coba.png'),
 (12, 'BIDANG TI', 'smash', 111111111, 'gresik', 'bermain', '2026-04-01', '15:20:14', '12:35:39', 'coba.png'),
-(13, 'RADIO', 'adipati nugroho indo kusumo', 812039284, 'surabaya lamongan gresik', 'mencoba kembali apa yang rusak', '2026-04-05', '00:00:00', NULL, '');
+(13, 'RADIO', 'adipati nugroho indo kusumo', 812039284, 'surabaya lamongan gresik', 'mencoba kembali apa yang rusak', '2026-04-05', '00:00:00', '13:04:27', ''),
+(14, 'BIDANG SPBE', 'Jiwo sujiwo', 2147483647, 'warung kopi ayam jago', 'mau memberikan ayam jago kecepatan wifi 1000000 mbps', '2026-04-09', '12:46:10', '13:06:32', ''),
+(15, 'BIDANG SIP', 'as', 2147483647, 'asdawd', 'asd', '2026-04-09', '12:57:31', '13:06:11', 'foto_1775714251.png'),
+(16, 'KEPALA DINAS KOMINFO', 'dwa', 2147483647, 'asd', 'daw', '2026-04-09', '12:57:48', '13:06:28', ''),
+(17, 'BIDANG SIP', 'as', 2147483647, 'asd', 'adwa', '2026-04-09', '12:58:53', '13:06:20', 'foto_1775714333.png'),
+(18, 'KEPALA DINAS KOMINFO', 'asdwa', 2147483647, 'as', 'sdw', '2026-04-09', '13:00:07', '13:06:24', 'foto_1775714407.png'),
+(19, 'BIDANG SPBE', 'sujiwo jiwo', 2147483647, 'ayam jago', 'ngopi santuy', '2026-04-09', '13:14:30', '13:06:36', ''),
+(20, 'KEPALA DINAS KOMINFO', 'sujiwo jiwo', 2147483647, 'ayam jago', 'jagojagojagojago', '2026-04-09', '13:20:49', '13:06:04', ''),
+(21, 'BIDANG TI', '123', 2147483647, '123', '123', '2026-04-09', '13:32:37', '13:06:08', 'foto_1775716357.png'),
+(22, 'SEKRETARIS DINAS KOMINFO', '123', 2147483647, '123', '123', '2026-04-09', '13:33:04', '13:04:19', 'foto_1775716384.png'),
+(23, 'KEPALA DINAS KOMINFO', 'ggus', 2147483647, 'gresi', 'k', '2026-04-13', '13:22:29', '13:23:20', 'foto_1776061349.png');
 
 --
 -- Indexes for dumped tables
@@ -101,7 +111,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_USER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID_USER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
