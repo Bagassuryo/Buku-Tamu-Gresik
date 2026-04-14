@@ -176,6 +176,7 @@ if (isset($_POST["login"])) {
         padding: 18px;
         padding-left: 80px;
         font-size: 14px;
+        font-weight: 500;
     }
 
 </style>
